@@ -1,0 +1,116 @@
+/**
+ * Copyright 2016-present, Baifendian, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ */
+
+@import '../../variables.less';
+
+.bfd-calendar {
+  color: #666;
+  padding: 8px;
+  background-color: #fff;
+  border-radius: 2px;
+  table {
+    font: inherit;
+    margin-top: 10px;
+    border-collapse: collapse;
+    th {
+      text-align: center;
+      padding: 3px;
+      font-weight: normal;
+      color: #999;
+    }
+    td {
+      min-width: 0;
+      text-align: center;
+    }
+  }
+}
+
+.bfd-calendar__day {
+  display: block;
+  white-space: nowrap;
+  width: 100%;
+  padding: 6px;
+  text-align: center;
+  line-height: 1;
+  margin: 0;
+  border: 0;
+  background-color: transparent;
+  border-radius: 4px;
+  cursor: pointer;
+  outline: none;
+  &:hover {
+    text-decoration: none;
+    background-color: #efefef;
+  }
+  &[disabled] {
+    color: #eaeaea;
+    background-color: #fafafa;
+    cursor: default;
+  }
+}
+
+.bfd-calendar__header {
+  text-align: center;
+  .bfd-btn + .bfd-btn {
+    margin: 0;
+  }
+}
+
+.bfd-calendar__header-left {
+  float: left;
+}
+
+.bfd-calendar__header-right {
+  float: right;
+}
+
+.bfd-calendar__result {
+  display: inline-block;
+  line-height: 22px;
+}
+
+.bfd-calendar__day--today {
+  background-color: #e0e0e0;
+  &:hover {
+    background-color: #e0e0e0;
+  }
+}
+
+.bfd-calendar__day--exclude {
+  color: #dedede;
+}
+
+.bfd-calendar__day--active,
+.bfd-calendar__day--start,
+.bfd-calendar__day--end {
+  background-color: @primary-color-deep;
+  color: #fff;
+  &:hover {
+    background-color: @primary-color-deep;
+  }
+}
+
+.bfd-calendar__day--start {
+  border-radius: 4px 0 0 4px;
+  &.bfd-calendar__day--end {
+    border-radius: 4px;
+  }
+}
+
+.bfd-calendar__day--end {
+  border-radius: 0 4px 4px 0;
+}
+
+.bfd-calendar__day--inside {
+  background-color: @primary-color-light;
+  border-radius: 0;
+  &:hover {
+    background-color: @primary-color-light;
+  }
+}

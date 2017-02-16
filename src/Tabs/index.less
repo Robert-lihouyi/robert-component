@@ -1,0 +1,103 @@
+/**
+ * Copyright 2016-present, Baifendian, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ */
+
+@import '../variables.less';
+
+.bfd-tabs__list {
+  margin: 0;
+  list-style: none;
+  padding: 0 30px;
+  border-bottom: 1px solid #e3ebf3;
+}
+
+.bfd-tabs__tab {
+  display: inline-block;
+  > a {
+    text-decoration: none;
+    display: block;
+    padding: 8px 12px;
+    border-radius: 2px 2px 0 0;
+    color: #666;
+    border: 0;
+    &:hover {
+      background-color: @primary-color-deep;
+      color: #fff;
+    }
+  }
+}
+
+.bfd-tabs__tab--active {
+  > a {
+    color: #fff;
+    background-color: @primary-color;
+    border: 0;
+    &:focus,
+    &:hover {
+      color: #fff;
+      background-color: @primary-color;
+      border: 0;
+    }
+  }
+}
+
+.bfd-tabs__tab-remove {
+  margin-left: 5px;
+}
+
+.bfd-tabs__panel {
+  padding-top: 10px;
+  opacity: 0;
+  transform: scale(.85);
+  display: none;
+}
+
+.bfd-tabs__panel--active {
+  transition: all .2s;
+  opacity: 1;
+  transform: scale(1);
+}
+
+.bfd-tabs--dynamic {
+  .bfd-tabs__list {
+    padding: 0;
+    background-color: #fafafa;
+    border-bottom-color: #f0f0f0;
+  }
+  .bfd-tabs__tab {
+    > a {
+      padding-top: 5px;
+      padding-bottom: 5px;
+      padding-right: 5px;
+      border-top: 3px solid transparent;
+      &:hover {
+        color: #333;
+        background-color: #f0f0f0;
+        border-top-color: @primary-color;
+      }
+    }
+  }
+  .bfd-tabs__tab--active {
+    > a {
+      color: #333;
+      border-top-color: @primary-color;
+      background-color: #f0f0f0;
+      &:focus,
+      &:hover {
+        color: #333;
+        border-top: 3px solid @primary-color;
+        background-color: #f0f0f0;
+      }
+    }
+  }
+  .bfd-tabs__tab-content {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1;
+  }
+}

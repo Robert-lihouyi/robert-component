@@ -1,0 +1,107 @@
+/**
+ * Copyright 2016-present, Baifendian, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ */
+
+@import '../variables.less';
+
+.bfd-btn {
+  color: #fff;
+  padding: 0 20px;
+  height: 30px;
+  background-color: @primary-color;
+  border: 1px solid @primary-color;
+  border-radius: 2px;
+  vertical-align: middle;
+  cursor: pointer;
+  user-select: none;
+  // transition: background-color .1s ease, color .1s ease, border-color .1s ease;
+  &:hover {
+    background-color: @primary-color-deep;
+  }
+  &:active {
+    background-color: @primary-color-deeper;
+  }
+  &:focus {
+    outline: none;
+  }
+  &[disabled] {
+    background-color: #eceff1;
+    border-color: #eaeaea;
+    color: #9e9e9e;
+    cursor: not-allowed;
+  }
+  .bfd-icon {
+    margin-right: 5px;
+  }
+  +.bfd-btn {
+    margin-left: 10px;
+  }
+}
+
+.bfd-btn--minor {
+  color: #333;
+  background-color: #f8f8f8;
+  border-color: #c6c6c6;
+  &:hover {
+    background-color: #f1f1f1;
+  }
+  &:active {
+    background-color: #eaeaea;
+  }
+}
+
+.bfd-btn--sm {
+  padding: 0 10px;
+  height: 22px;
+}
+
+.bfd-btn--lg {
+  padding: 0 24px;
+  height: 40px;
+}
+
+.bfd-btn--icon,
+.bfd-btn--circle {
+  padding: 0;
+  width: 30px;
+  text-align: center;
+  &.bfd-btn--sm {
+    width: 22px;
+  }
+  &.bfd-btn--lg {
+    width: 40px;
+  }
+}
+
+.bfd-btn--icon {
+  .bfd-icon {
+    margin-right: 0;
+  }
+}
+
+.bfd-btn--circle {
+  border-radius: 50%;
+}
+
+.bfd-btn--transparent {
+  border: 0;
+  background-color: transparent;
+  color: inherit;
+  opacity: .7;
+  transition: opacity .1s ease;
+  &:hover:enabled {
+    color: inherit;
+    background-color: transparent;
+    opacity: .85;
+  }
+  &:active:enabled {
+    color: inherit;
+    background-color: transparent;
+    opacity: 1;
+  }
+}

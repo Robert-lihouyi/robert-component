@@ -1,0 +1,142 @@
+/**
+ * Copyright 2016-present, Baifendian, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ */
+
+@import '../variables.less';
+
+@duration: .2s;
+@zIndex: 1000;
+
+.bfd-modal--scrollbar-measure {
+  position: absolute;
+  top: -9999px;
+  width: 50px;
+  height: 50px;
+  overflow: scroll;
+}
+
+body.bfd-modal--open {
+  overflow: hidden;
+}
+
+.bfd-modal {
+  display: none;
+  backface-visibility: hidden;
+}
+
+.bfd-modal__backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: -1px;
+  left: 0;
+  opacity: 0;
+  transition: all @duration;
+  z-index: @zIndex;
+  background-color: rgba(0, 0, 0, .8);
+}
+
+.bfd-modal__modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: @zIndex;
+  -webkit-overflow-scrolling: touch;
+  outline: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+}
+
+.bfd-modal__modal-dialog {
+  margin: 100px auto;
+  width: 600px;
+  transition: all @duration;
+}
+
+.bfd-modal__modal-dialog--lock {
+  animation: bfd-modal-shake .8s;
+}
+
+@keyframes bfd-modal-shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+.bfd-modal__modal-content {
+  opacity: 0;
+  transform: scale(.98) translate3d(0, -10%, 0);
+  transform-origin: top;
+  transition: all @duration;
+}
+
+.bfd-modal--sm {
+  .bfd-modal__modal-dialog {
+    width: 300px;
+  }
+}
+
+.bfd-modal--lg {
+  .bfd-modal__modal-dialog {
+    width: 1000px;
+  }
+}
+
+.bfd-modal__modal-header {
+  background-color: @primary-color-deep;
+  color: #fff;
+  padding: 15px 20px;
+  position: relative;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+    font-size: 14px;
+  }
+}
+
+.bfd-modal__modal-header-close {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  margin-top: -11px;
+}
+
+.bfd-modal__modal-body {
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+  padding: 20px;
+  background-color: #fff;
+}
+
+div.bfd-modal--open {
+  .bfd-modal__backdrop {
+    opacity: .6;
+  }
+  .bfd-modal__modal-content {
+    opacity: 1;
+    transform: scale(1) translate3d(0, 0, 0);
+  }
+}

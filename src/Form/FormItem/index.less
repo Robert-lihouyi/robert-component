@@ -1,0 +1,60 @@
+/**
+ * Copyright 2016-present, Baifendian, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ */
+
+@import '../../variables.less';
+
+.bfd-form__item {
+  margin-bottom: 15px;
+}
+
+.bfd-form__item-label {
+  line-height: 30px;
+  height: 30px;
+  text-align: right;
+  float: left;
+}
+
+.bfd-form__item-content {
+  overflow: auto;
+}
+
+.bfd-form__item-label--required {
+  &:before {
+    content: '* ';
+    color: @danger-color;
+    font-size: 14px;
+    font-weight: bold;
+    vertical-align: middle;
+  }
+}
+
+.bfd-form__item-tip {
+  font-size: 12px;
+  margin-top: 5px;
+  margin-left: 5px;
+  display: inline-block;
+  color: #999;
+  > .bfd-icon {
+    margin-right: 3px;
+  }
+}
+
+.bfd-form__item--error {
+  .bfd-input,
+  .bfd-form-textarea {
+    border-color: @danger-color;
+  }
+  .bfd-select,
+  .bfd-multiple-select {
+    border-color: @danger-color;
+  }
+  .bfd-form__item-tip {
+    color: @danger-color;
+  }
+}

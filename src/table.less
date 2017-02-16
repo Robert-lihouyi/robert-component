@@ -1,0 +1,51 @@
+/**
+ * Copyright 2016-present, Baifendian, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ */
+
+.bfd-table {
+  font: inherit;
+  border-spacing: 0;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  > thead {
+    > tr {
+      background-color: #fff;
+      > th {
+        font-weight: 400;
+        border-bottom: 3px solid #e7ebed;
+        padding: 8px;
+        border-top: 0;
+        text-align: left;
+      }
+    }
+  }
+  > tbody {
+    > tr {
+      background-color: #fff;
+      > td {
+        vertical-align: middle;
+        word-wrap: break-word;
+        word-break: break-word;
+        color: #666;
+        border-top: 1px solid #eff3f8;
+        padding: 8px;
+      }
+    }
+    tr:nth-child(2n) {
+      background-color: #fafafa;
+    }
+  }
+}
+.bfd-table--align-center {
+  text-align: center;
+  width: 100%;
+  height: 100%;
+}

@@ -1,0 +1,141 @@
+/**
+ * Copyright 2016-present, Baifendian, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ */
+
+@import '../variables.less';
+
+.bfd-paging__row {
+  margin-right: -15px;
+  margin-left: -15px;
+}
+.bfd-paging__total-size {
+  color: red;
+}
+.bfd-paging__total-name {
+  margin-left: 20px;
+  line-height: 32px;
+}
+.bfd-paging__layout-div {
+  display: inline-block;
+  vertical-align: middle;
+  float: left!important;
+}
+.bfd-paging__layout-right {
+    padding-right: 15px;
+    float: right!important;
+  }
+.bfd-paging__label-font {
+  font-weight: normal;
+}
+.bfd-paging__go {
+  display: inline-block;
+  vertical-align: middle
+}
+.bfd-paging__go-number {
+    width: 40px;
+    margin-right: 10px;
+}
+.bfd-paging__pagination {
+  margin-right: 10px;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 10px 0 0;
+  padding-left: 0;
+  li {
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    display: inline;
+    span {
+      position: relative;
+      float: left;
+      margin-left: -1px;
+      color: #337ab7;
+      text-decoration: none;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      padding: 0;
+      width: 40px;
+      text-align: center;
+      line-height: 30px;
+      height: 30px;
+      cursor: default;
+      color: #666;
+    }
+    span:hover {
+       background: none;
+    }
+    a {
+      width: 40px;
+      height: 30px;
+      text-align: center;
+      padding: 0;
+      position: relative;
+      float: left;
+      line-height: 30px;
+      vertical-align: middle;
+      margin-left: -1px;
+      text-decoration: none;
+      border: 1px solid #ddd;
+      color: #666;
+    }
+    a:hover{
+      color: @primary-color;
+      text-decoration: none;
+    }
+  }
+  .bfd-paging__pagination-li--prev {
+    height: 30px;
+    line-height: 28px;
+    margin-left: 0;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+  }
+  .bfd-paging__pagination-li--next {
+    height: 30px;
+    line-height: 28px;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+  }
+  .bfd-paging__pagination-li--frist {
+    background: #eceff1;
+    color: #999;
+    cursor: default;
+  }
+  .bfd-paging__pagination-li--frist:hover{
+    cursor: default;
+    background: #eceff1;
+    color: #999;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+  }
+  .bfd-paging__pagination-li--end {
+    background: #eceff1;
+    color: #999;
+  }
+  .bfd-paging__pagination-li--end:hover {
+    cursor: default;
+    background: #eceff1;
+    color: #999;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+  }
+  .bfd-paging__pagination-li--active a{
+    background: @primary-color-deep;
+    color: #fff;
+    border-top: 1px solid @primary-color-deep;
+    border-bottom: 1px solid @primary-color-deep;
+    cursor: default;
+  }
+  .bfd-paging__pagination-li--active a:hover{
+    color: #fff;
+  }
+}

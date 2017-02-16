@@ -1,0 +1,105 @@
+/**
+ * Copyright 2016-present, Baifendian, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ */
+
+@import '../../variables.less';
+
+.bfd-radio {
+  font-weight: 400;
+  padding-left: 16px;
+  position: relative;
+  margin-bottom: 0;
+  cursor: pointer;
+  min-height: 16px;
+  line-height: 30px;
+  display: inline-block;
+  vertical-align: middle;
+  &:hover {
+    color: @primary-color-deep;
+    .bfd-radio__status {
+      &:before {
+        border-color: @primary-color-deep;
+      }
+    }
+  }
+  &:focus {
+    outline: none;
+    .bfd-radio__status {
+      &:before {
+        border-color: @primary-color;
+      }
+    }
+    .bfd-radio__text {
+      color: @primary-color;
+    }
+  }
+  input[type="radio"] {
+    display: none;
+    &:checked {
+      + .bfd-radio__status {
+        &:before {
+          border-color: @primary-color-deep;
+        }
+        &:after {
+          display: block;
+        }
+        + .bfd-radio__test {
+          color: @primary-color-deep;
+        }
+      }
+    }
+  }
+}
+
+.bfd-radio--disabled {
+  cursor: not-allowed;
+  .bfd-radio__status {
+    &:before {
+      border-color: #eceff1!important;
+    }
+    &:after {
+      background-color: #eceff1!important;
+    }
+  }
+  .bfd-radio__text {
+    color: #999!important;
+  }
+}
+
+.bfd-radio__status {
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    box-sizing: border-box;
+  }
+  &:before {
+    left: 0;
+    top: 50%;
+    font-size: 16px;
+    width: 1em;
+    height: 1em;
+    margin-top: -.5em;
+    border: 1px solid #9e9e9e;
+  }
+  &:after {
+    left: 4px;
+    top: 50%;
+    margin-top: -4px;
+    width: 8px;
+    height: 8px;
+    display: none;
+    background-color: @primary-color-deep;
+  }
+}
+
+.bfd-radio__text {
+  pointer-events: none;
+  margin-left: 7px;
+}

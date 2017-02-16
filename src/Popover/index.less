@@ -1,0 +1,137 @@
+/**
+ * Copyright 2016-present, Baifendian, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ */
+
+@padding: 7px;
+@arrowRelative: 20px + @padding;
+
+.bfd-popover__trigger {
+  cursor: pointer;
+  user-select: none;
+}
+
+.bfd-popover__trigger--disabled,
+.bfd-popover__trigger--disabled * {
+  background-color: #eceff1!important;
+  border-color: #eaeaea!important;
+  cursor: not-allowed!important;
+  color: #999!important;
+  user-select: none;
+}
+
+.bfd-popover {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 9999;
+  &:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+  }
+}
+
+.bfd-popover--animation {
+  animation: bfd-popover .15s;
+}
+
+@keyframes bfd-popover {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.bfd-popover--up {
+  padding-bottom: @padding;
+  margin-top: -@padding;
+  &:after {
+    left: 50%;
+    bottom: 1px;
+    margin-left: -@padding;
+    border-left: @padding solid transparent;
+    border-right: @padding solid transparent;
+    border-top: @padding - 1px solid #fff;
+  }
+}
+
+.bfd-popover--down {
+  padding-top: @padding;
+  &:after {
+    left: 50%;
+    top: 1px;
+    margin-left: -@padding;
+    border-left: @padding solid transparent;
+    border-right: @padding solid transparent;
+    border-bottom: @padding - 1px solid #fff;
+  }
+}
+
+.bfd-popover--left {
+  padding-right: @padding;
+  &:after {
+    top: 50%;
+    right: 1px;
+    margin-top: -@padding;
+    border-top: @padding solid transparent;
+    border-bottom: @padding solid transparent;
+    border-left: @padding - 1px solid #fff;
+  }
+}
+
+.bfd-popover--right {
+  padding-left: @padding;
+  &:after {
+    top: 50%;
+    left: 1px;
+    margin-top: -@padding;
+    border-top: @padding solid transparent;
+    border-bottom: @padding solid transparent;
+    border-right: @padding - 1px solid #fff;
+  }
+}
+
+.bfd-popover--align-left {
+  &:after {
+    left: @arrowRelative;
+  }
+}
+
+.bfd-popover--align-right {
+  &:after {
+    left: auto;
+    right: @arrowRelative;
+  }
+}
+
+.bfd-popover--align-top {
+  &:after {
+    top: @arrowRelative;
+  }
+}
+
+.bfd-popover--align-bottom {
+  &:after {
+    top: auto;
+    bottom: @arrowRelative;
+  }
+}
+
+.bfd-popover__content {
+  padding: 10px 12px;
+  background: #fff;
+  border-radius: 2px;
+  word-wrap: break-word;
+  box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, .25);
+  max-width: 200px;
+  max-height: 300px;
+  overflow: auto;
+}
